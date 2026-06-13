@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intent AI — uma arquitectura que processa intenção</title>
+<title>Intent AI — uma arquitetura que processa intenção</title>
 <style>
   :root{
     --bg:#0a0a0f;
@@ -290,6 +290,18 @@
   .paper .pmeta{font-size:.64rem;letter-spacing:.12em;color:var(--ink-faint);
     padding-top:.85rem;border-top:1px solid var(--line)}
 
+  /* ── current-focus status ── */
+  .status{margin-top:2.2rem;border:1px solid var(--line);border-radius:12px;padding:24px 26px;
+    background:linear-gradient(rgba(131,180,198,.055),transparent);border-left:2px solid var(--cool)}
+  .status .slabel{display:flex;align-items:center;gap:10px;font-size:.66rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--cool);margin-bottom:.85rem}
+  .status .dot{width:8px;height:8px;border-radius:50%;background:var(--cool);flex:none;
+    animation:livePulse 2.2s ease-in-out infinite}
+  @keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(131,180,198,.5)}
+    70%{box-shadow:0 0 0 9px rgba(131,180,198,0)}100%{box-shadow:0 0 0 0 rgba(131,180,198,0)}}
+  .status p{font-size:1.02rem;color:var(--ink-dim);margin:0;line-height:1.5}
+  .status p b{color:var(--ink);font-weight:600}
+
   /* ── close ── */
   .close{text-align:center;padding:22vh 0 26vh}
   .close .mark{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
@@ -374,8 +386,8 @@
       <span class="result" data-i18n="comp.res">fogo</span>
     </div>
     <p class="reveal" style="text-align:center;font-size:.96rem" data-i18n="comp.note">
-      A mesma gramática de composição constrói desde o concreto até ao
-      abstracto — em níveis de profundidade crescente.
+      A mesma gramática de composição constrói desde o concreto até o
+      abstrato — em níveis de profundidade crescente.
     </p>
     <div class="metrics reveal">
       <div class="metric"><span class="m-num">88</span><span class="m-lab" data-i18n="comp.m1">elementos universais</span></div>
@@ -392,7 +404,7 @@
     <h2 class="reveal" data-i18n="ast.h">Não uma sequência de palavras.<br>Uma estrutura de significado.</h2>
     <p class="reveal" data-i18n="ast.p">
       Antes de responder, o sistema desmonta a pergunta na sua
-      arquitectura de intenção — quem, sobre quem, em que sentido, com
+      arquitetura de intenção — quem, sobre quem, em que sentido, com
       que medida. É sobre <strong>esta estrutura</strong>, e não sobre
       as palavras, que ele <span class="em">raciocina</span>.
     </p>
@@ -430,9 +442,9 @@
       <div class="ast-answer">
         <div class="aa-label" data-i18n="ast.alabel">a resposta gerada</div>
         <p class="aa-verdict" data-i18n="ast.averdict">"Em parte: há mediação massiva de Platão, mas fontes independentes atestam um núcleo próprio de Sócrates."</p>
-        <p class="aa-line" data-i18n="ast.aline1"><b>Sustentação registada:</b> Sofistas contrastam com Sócrates; Platão foi discípulo de Sócrates; Sócrates precede Platão.</p>
+        <p class="aa-line" data-i18n="ast.aline1"><b>Sustentação registrada:</b> Sofistas contrastam com Sócrates; Platão foi discípulo de Sócrates; Sócrates precede Platão.</p>
         <p class="aa-line" data-i18n="ast.aline2"><b>Porquê esta leitura:</b> cobre 5 nós de evidência e reconhece contra-evidência de Protágoras de Abdera; 2 leituras alternativas preteridas.</p>
-        <p class="aa-line" data-i18n="ast.aline3"><b>O que a estrutura não decide:</b> o grau exacto dessa construção e a intenção de Platão — as fontes disponíveis não são independentes entre si.</p>
+        <p class="aa-line" data-i18n="ast.aline3"><b>O que a estrutura não decide:</b> o grau exato dessa construção e a intenção de Platão — as fontes disponíveis não são independentes entre si.</p>
       </div>
       <div class="ast-note" data-i18n="ast.note">representação simplificada — os rótulos substituem a estrutura interna real</div>
       <div class="ast-actions">
@@ -455,11 +467,11 @@
 <!-- ── THE ARCHITECTURE ───────────────────────────────── -->
 <section>
   <div class="wrap">
-    <span class="kicker reveal" data-i18n="arch.k">A arquitectura</span>
+    <span class="kicker reveal" data-i18n="arch.k">A arquitetura</span>
     <h2 class="reveal" data-i18n="arch.h">Um sistema cognitivo em camadas.</h2>
     <p class="reveal" data-i18n="arch.p">
       Inspirada na forma como as redes se organizam em níveis, a
-      arquitectura empilha camadas cognitivas. <strong>Cada uma
+      arquitetura empilha camadas cognitivas. <strong>Cada uma
       responde a uma pergunta diferente</strong> — e nenhuma
       substitui&nbsp;outra.
     </p>
@@ -534,7 +546,7 @@
 <section>
   <div class="wrap">
     <span class="kicker reveal" data-i18n="pap.k">Fundamentos escritos</span>
-    <h2 class="reveal" data-i18n="pap.h">Não é vapor.<br>É investigação documentada.</h2>
+    <h2 class="reveal" data-i18n="pap.h">Não é vapor.<br>É pesquisa documentada.</h2>
     <p class="reveal" data-i18n="pap.p">
       Antes de cada camada existir em código, existiu em pensamento.
       Três delas têm já o seu <strong>fundamento formal</strong> —
@@ -552,7 +564,7 @@
         <div class="ptag"><span data-i18n="pap2.tag">camada L5</span><span class="wl">whitepaper</span></div>
         <div class="pttl" data-i18n="pap2.ttl">Árvore Focal Dinâmica</div>
         <div class="pquote" data-i18n="pap2.q">"Atenção difusa é atenção inútil."</div>
-        <div class="pdesc" data-i18n="pap2.d">Foco e relevância: o que importa agora fica activo, o resto acessível em fundo.</div>
+        <div class="pdesc" data-i18n="pap2.d">Foco e relevância: o que importa agora fica ativo, o resto acessível em fundo.</div>
         <div class="pmeta">M. M. Carvalho · v2.0 · 2026</div>
       </div>
       <div class="paper">
@@ -585,11 +597,21 @@
     <div class="meet reveal" data-i18n="conv.meet">convergem em<span>uma única estrutura de significado</span></div>
     <div class="converge reveal">
       <div class="acard"><div class="flag" data-i18n="conv.af1">resposta · PT</div>
-        <div class="a"><b>Sustentação registada:</b> Platão foi discípulo de Sócrates…</div></div>
+        <div class="a"><b>Sustentação registrada:</b> Platão foi discípulo de Sócrates…</div></div>
       <div class="acard"><div class="flag" data-i18n="conv.af2">resposta · EN</div>
         <div class="a"><b>Registered support:</b> Plato was a student of Socrates…</div></div>
     </div>
     <p class="stack-note reveal" data-i18n="conv.note">O raciocínio é o mesmo. Só a superfície muda de língua.</p>
+  </div>
+</section>
+
+<!-- ── CURRENT FOCUS ──────────────────────────────────── -->
+<section>
+  <div class="wrap">
+    <div class="status reveal">
+      <div class="slabel"><span class="dot"></span><span data-i18n="status.label">Foco atual · em desenvolvimento ativo</span></div>
+      <p data-i18n="status.text">Agora mesmo, provando que <b>o mesmo raciocínio acontece em português e em inglês</b> — com a linguagem só nas bordas. A coluna cognitiva já responde nos dois idiomas a partir da mesma estrutura; falta a prova mecânica de que o estado interno é idêntico, ponto a ponto.</p>
+    </div>
   </div>
 </section>
 
@@ -655,14 +677,14 @@
   <div class="wrap">
     <p class="pull reveal" data-i18n="close.pull">
       Não é um modelo melhor.
-      <span class="em">É uma arquitectura diferente.</span>
+      <span class="em">É uma arquitetura diferente.</span>
     </p>
     <div class="mark reveal">Intent&nbsp;AI</div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap"><p data-i18n="foot">Arquitectura cognitiva modular · trabalho em curso</p></div>
+  <div class="wrap"><p data-i18n="foot">Arquitetura cognitiva modular · trabalho em curso</p></div>
 </footer>
 
 <script>
@@ -779,6 +801,8 @@
     "conv.af1": `answer · PT`,
     "conv.af2": `answer · EN`,
     "conv.note": `The reasoning is the same. Only the surface changes language.`,
+    "status.label": `Current focus · in active development`,
+    "status.text": `Right now, proving that <b>the same reasoning happens in Portuguese and in English</b> — with language only at the edges. The cognitive column already answers in both languages from the same structure; what remains is the mechanical proof that the internal state is identical, point by point.`,
     "hon.k": `The difference that matters`,
     "hon.h": `When it doesn't know, it doesn't invent.`,
     "hon.p": `Most systems close the gap with plausible text. This one <strong>declares it</strong> — the line between a tool you trust and one you watch.`,
