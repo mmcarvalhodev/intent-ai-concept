@@ -302,6 +302,49 @@
   .status p{font-size:1.02rem;color:var(--ink-dim);margin:0;line-height:1.5}
   .status p b{color:var(--ink);font-weight:600}
 
+  /* ── why it matters ── */
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:2.4rem}
+  @media(max-width:600px){.why{grid-template-columns:1fr}}
+  .why-card{border:1px solid var(--line);border-radius:10px;padding:20px 22px;
+    background:linear-gradient(var(--bg-soft),#0c0c14)}
+  .why-card .wp{font-family:var(--serif);font-size:1.1rem;color:var(--ink);margin-bottom:.5rem;line-height:1.25}
+  .why-card .wa{font-size:.92rem;color:var(--ink-dim);line-height:1.45}
+
+  /* ── simple structure convergence ── */
+  .conv2{margin-top:2.2rem;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    background:linear-gradient(var(--bg-soft),#0b0b12)}
+  .conv2 .sents{display:grid;grid-template-columns:1fr 1fr}
+  @media(max-width:520px){.conv2 .sents{grid-template-columns:1fr}}
+  .conv2 .sent{padding:20px 22px;text-align:center;border-bottom:1px solid var(--line)}
+  .conv2 .sent:first-child{border-right:1px solid var(--line)}
+  @media(max-width:520px){.conv2 .sent:first-child{border-right:none}}
+  .conv2 .sflag{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.5rem}
+  .conv2 .sent .s{font-family:var(--serif);font-size:1.08rem;color:var(--ink)}
+  .conv2 .down{text-align:center;color:var(--fire);font-size:1.4rem;padding:8px 0 2px}
+  .struct{padding:4px 22px 24px}
+  .struct .stitle{text-align:center;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--cool);margin:6px 0 16px}
+  .srow{display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:center;
+    max-width:330px;margin:0 auto;padding:8px 0;border-bottom:1px solid var(--line)}
+  .srow:last-child{border-bottom:none}
+  .srow .role{font-family:var(--sans);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-faint);text-align:right}
+  .srow .val{font-family:var(--serif);font-size:1.08rem;color:var(--fire)}
+  .conv2-note{text-align:center;font-size:.84rem;color:var(--ink-faint);margin-top:1.2rem;font-style:italic}
+
+  /* ── project status checklist ── */
+  .slist{margin-top:1.6rem;display:flex;flex-direction:column}
+  .sitem{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:10px 2px;
+    border-bottom:1px solid var(--line)}
+  .sitem:last-child{border-bottom:none}
+  .sitem .mk{font-size:.95rem;line-height:1.5;text-align:center}
+  .sitem .tx{font-size:.96rem;color:var(--ink-dim);line-height:1.45}
+  .sitem.done .mk{color:var(--fire)}
+  .sitem.done .tx{color:var(--ink)}
+  .sitem.wip .mk{color:var(--cool)}
+  .sitem.todo{opacity:.65}
+  .sitem.todo .mk{color:var(--ink-faint)}
+
   /* ── close ── */
   .close{text-align:center;padding:22vh 0 26vh}
   .close .mark{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
@@ -345,6 +388,26 @@
   </div>
 </section>
 
+<!-- ── WHY IT MATTERS ─────────────────────────────────── -->
+<section>
+  <div class="wrap">
+    <span class="kicker reveal" data-i18n="why.k">Por que isso importa</span>
+    <h2 class="reveal" data-i18n="why.h">Problemas reais que o Intent AI ataca.</h2>
+    <p class="reveal" data-i18n="why.p">
+      Cada camada da arquitetura nasce de uma dor concreta dos sistemas
+      de IA atuais.
+    </p>
+    <div class="why reveal">
+      <div class="why-card"><div class="wp" data-i18n="why.p1">Perde o fio em conversas longas</div><div class="wa" data-i18n="why.a1">A conversa é preservada e navegável — não comprimida e esquecida.</div></div>
+      <div class="why-card"><div class="wp" data-i18n="why.p2">Depende demais da linguagem</div><div class="wa" data-i18n="why.a2">O raciocínio acontece em significado, não em palavras.</div></div>
+      <div class="why-card"><div class="wp" data-i18n="why.p3">Não tem memória persistente</div><div class="wa" data-i18n="why.a3">O histórico acumula valor em vez de evaporar a cada sessão.</div></div>
+      <div class="why-card"><div class="wp" data-i18n="why.p4">Alucina por associação estatística</div><div class="wa" data-i18n="why.a4">Sem base, o sistema declara a lacuna em vez de inventar.</div></div>
+      <div class="why-card"><div class="wp" data-i18n="why.p5">Não consegue justificar o que decide</div><div class="wa" data-i18n="why.a5">Cada conclusão vem com sua sustentação — o porquê é explícito.</div></div>
+      <div class="why-card"><div class="wp" data-i18n="why.p6">Quebra ao trocar de idioma</div><div class="wa" data-i18n="why.a6">A mesma estrutura responde em qualquer língua; a tradução fica só na borda.</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- ── THE PREMISE ────────────────────────────────────── -->
 <section>
   <div class="wrap">
@@ -361,6 +424,33 @@
       Intent AI desce até essa estrutura — e é lá, no terreno comum a
       todas as línguas, que <span class="em">raciocina</span>.
     </p>
+  </div>
+</section>
+
+<!-- ── SAME STRUCTURE (PT/EN → structure) ─────────────── -->
+<section>
+  <div class="wrap">
+    <span class="kicker reveal" data-i18n="cv2.k">A prova mais simples</span>
+    <h2 class="reveal" data-i18n="cv2.h">A mesma intenção, em qualquer língua.</h2>
+    <p class="reveal" data-i18n="cv2.p">
+      Duas frases, duas línguas — e por baixo, uma única estrutura.
+      É sobre ela que o sistema pensa.
+    </p>
+    <div class="conv2 reveal">
+      <div class="sents">
+        <div class="sent"><div class="sflag">Português</div><div class="s">"João deu um livro para Maria"</div></div>
+        <div class="sent"><div class="sflag">English</div><div class="s">"John gave a book to Mary"</div></div>
+      </div>
+      <div class="down">↓</div>
+      <div class="struct">
+        <div class="stitle" data-i18n="cv2.st">estrutura de significado</div>
+        <div class="srow"><div class="role" data-i18n="cv2.r1">agente</div><div class="val" data-i18n="cv2.v1">João</div></div>
+        <div class="srow"><div class="role" data-i18n="cv2.r2">ação</div><div class="val" data-i18n="cv2.v2">entregar</div></div>
+        <div class="srow"><div class="role" data-i18n="cv2.r3">objeto</div><div class="val" data-i18n="cv2.v3">livro</div></div>
+        <div class="srow"><div class="role" data-i18n="cv2.r4">destino</div><div class="val" data-i18n="cv2.v4">Maria</div></div>
+      </div>
+    </div>
+    <p class="conv2-note reveal" data-i18n="cv2.note">A frase muda de idioma. A estrutura, não.</p>
   </div>
 </section>
 
@@ -605,9 +695,22 @@
   </div>
 </section>
 
-<!-- ── CURRENT FOCUS ──────────────────────────────────── -->
+<!-- ── PROJECT STATUS ─────────────────────────────────── -->
 <section>
   <div class="wrap">
+    <span class="kicker reveal" data-i18n="st.k">Onde estamos</span>
+    <h2 class="reveal" data-i18n="st.h">Status do projeto.</h2>
+    <div class="slist reveal">
+      <div class="sitem done"><div class="mk">✓</div><div class="tx" data-i18n="st.i1">Arquitetura cognitiva em camadas — definida</div></div>
+      <div class="sitem done"><div class="mk">✓</div><div class="tx" data-i18n="st.i2">Camada de Sentido — implementada e funcional</div></div>
+      <div class="sitem done"><div class="mk">✓</div><div class="tx" data-i18n="st.i3">Conhecimento, Foco, Conversa Contínua, Neural e Bit Hierárquico — implementados e testados</div></div>
+      <div class="sitem done"><div class="mk">✓</div><div class="tx" data-i18n="st.i4">Pipeline de raciocínio ponta a ponta</div></div>
+      <div class="sitem done"><div class="mk">✓</div><div class="tx" data-i18n="st.i5">Três papers fundadores documentados</div></div>
+      <div class="sitem done"><div class="mk">✓</div><div class="tx" data-i18n="st.i6">Raciocínio bilíngue (PT + EN) a partir da mesma estrutura</div></div>
+      <div class="sitem wip"><div class="mk">⟳</div><div class="tx" data-i18n="st.i7">Prova mecânica de equivalência entre idiomas — em desenvolvimento</div></div>
+      <div class="sitem wip"><div class="mk">⟳</div><div class="tx" data-i18n="st.i8">Demonstração pública interativa — futura</div></div>
+      <div class="sitem todo"><div class="mk">○</div><div class="tx" data-i18n="st.i9">Camada de Personalidade — especificada, ainda não implementada</div></div>
+    </div>
     <div class="status reveal">
       <div class="slabel"><span class="dot"></span><span data-i18n="status.label">Foco atual · em desenvolvimento ativo</span></div>
       <p data-i18n="status.text">Agora mesmo, provando que <b>o mesmo raciocínio acontece em português e em inglês</b> — com a linguagem só nas bordas. A coluna cognitiva já responde nos dois idiomas a partir da mesma estrutura; falta a prova mecânica de que o estado interno é idêntico, ponto a ponto.</p>
@@ -803,6 +906,45 @@
     "conv.note": `The reasoning is the same. Only the surface changes language.`,
     "status.label": `Current focus · in active development`,
     "status.text": `Right now, proving that <b>the same reasoning happens in Portuguese and in English</b> — with language only at the edges. The cognitive column already answers in both languages from the same structure; what remains is the mechanical proof that the internal state is identical, point by point.`,
+    "why.k": `Why it matters`,
+    "why.h": `Real problems Intent AI tackles.`,
+    "why.p": `Each layer of the architecture is born from a concrete pain of today's AI systems.`,
+    "why.p1": `Loses the thread in long conversations`,
+    "why.a1": `The conversation is preserved and navigable — not compressed and forgotten.`,
+    "why.p2": `Over-relies on language`,
+    "why.a2": `Reasoning happens in meaning, not in words.`,
+    "why.p3": `Has no persistent memory`,
+    "why.a3": `History accumulates value instead of evaporating each session.`,
+    "why.p4": `Hallucinates by statistical association`,
+    "why.a4": `With no basis, the system declares the gap instead of inventing.`,
+    "why.p5": `Can't justify what it decides`,
+    "why.a5": `Every conclusion comes with its support — the why is explicit.`,
+    "why.p6": `Breaks when switching languages`,
+    "why.a6": `The same structure answers in any language; translation stays at the edge.`,
+    "cv2.k": `The simplest proof`,
+    "cv2.h": `The same intent, in any language.`,
+    "cv2.p": `Two sentences, two languages — and beneath them, a single structure. That is what the system thinks about.`,
+    "cv2.st": `structure of meaning`,
+    "cv2.r1": `agent`,
+    "cv2.v1": `John`,
+    "cv2.r2": `action`,
+    "cv2.v2": `to give`,
+    "cv2.r3": `object`,
+    "cv2.v3": `book`,
+    "cv2.r4": `destination`,
+    "cv2.v4": `Mary`,
+    "cv2.note": `The sentence changes language. The structure does not.`,
+    "st.k": `Where we are`,
+    "st.h": `Project status.`,
+    "st.i1": `Layered cognitive architecture — defined`,
+    "st.i2": `Sense Layer — implemented and working`,
+    "st.i3": `Knowledge, Focus, Continuous Chat, Neural and Hierarchical Bits — implemented and tested`,
+    "st.i4": `End-to-end reasoning pipeline`,
+    "st.i5": `Three founding papers documented`,
+    "st.i6": `Bilingual reasoning (PT + EN) from the same structure`,
+    "st.i7": `Mechanical proof of cross-language equivalence — in development`,
+    "st.i8": `Interactive public demo — upcoming`,
+    "st.i9": `Personality Layer — specified, not yet implemented`,
     "hon.k": `The difference that matters`,
     "hon.h": `When it doesn't know, it doesn't invent.`,
     "hon.p": `Most systems close the gap with plausible text. This one <strong>declares it</strong> — the line between a tool you trust and one you watch.`,
