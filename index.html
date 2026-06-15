@@ -345,6 +345,28 @@
   .sitem.todo{opacity:.65}
   .sitem.todo .mk{color:var(--ink-faint)}
 
+  /* ── compartmentalized knowledge ── */
+  .domains{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:2.4rem}
+  @media(max-width:680px){.domains{grid-template-columns:1fr 1fr}}
+  .dom{border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center;
+    background:linear-gradient(var(--bg-soft),#0c0c14)}
+  .dom.active{border-color:rgba(230,181,102,.4);background:linear-gradient(rgba(230,181,102,.06),transparent)}
+  .dom svg{width:100%;height:70px;display:block;margin:0 auto 12px}
+  .dom .gn{fill:var(--ink-dim)}
+  .dom .ge{stroke:var(--line);stroke-width:1.2;fill:none}
+  .dom.active .gn{fill:var(--fire)}
+  .dom.active .ge{stroke:rgba(230,181,102,.45)}
+  .dom .dname{font-family:var(--serif);font-size:1rem;color:var(--ink)}
+  .dom.active .dname{color:var(--fire)}
+  .dom .dmeta{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-faint);margin-top:4px}
+  .dom.plug{border-style:dashed;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;min-height:138px}
+  .dom.plug .pl{font-size:1.9rem;color:var(--ink-faint);line-height:1;margin-bottom:8px}
+  .dom.plug .dname{color:var(--ink-dim)}
+  .domains-note{text-align:center;font-size:.86rem;color:var(--ink-faint);
+    margin-top:1.4rem;font-style:italic}
+
   /* ── close ── */
   .close{text-align:center;padding:22vh 0 26vh}
   .close .mark{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
@@ -629,6 +651,62 @@
         <div class="plane-count"><span class="num">11</span><span class="unit" data-i18n="u.mod">módulos</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ── COMPARTMENTALIZED KNOWLEDGE ────────────────────── -->
+<section>
+  <div class="wrap">
+    <span class="kicker reveal" data-i18n="dom.k">Conhecimento compartimentado</span>
+    <h2 class="reveal" data-i18n="dom.h">O saber vive em compartimentos.</h2>
+    <p class="reveal" data-i18n="dom.p">
+      O conhecimento do sistema não é um bloco único. Cada domínio — a
+      filosofia, o cotidiano, um campo técnico — é um grafo próprio de
+      conceitos conectados. <strong>Adicionar uma área de saber é
+      encaixar um novo compartimento</strong>; o raciocínio que o
+      percorre é sempre o mesmo.
+    </p>
+    <div class="domains reveal">
+      <div class="dom active">
+        <svg viewBox="0 0 120 80" aria-hidden="true">
+          <line class="ge" x1="24" y1="24" x2="60" y2="16"/><line class="ge" x1="60" y1="16" x2="96" y2="30"/>
+          <line class="ge" x1="24" y1="24" x2="38" y2="56"/><line class="ge" x1="38" y1="56" x2="80" y2="58"/>
+          <line class="ge" x1="96" y1="30" x2="80" y2="58"/><line class="ge" x1="60" y1="16" x2="38" y2="56"/>
+          <circle class="gn" cx="24" cy="24" r="4"/><circle class="gn" cx="60" cy="16" r="4"/>
+          <circle class="gn" cx="96" cy="30" r="4"/><circle class="gn" cx="38" cy="56" r="4"/><circle class="gn" cx="80" cy="58" r="4"/>
+        </svg>
+        <div class="dname" data-i18n="dom.d1">Filosofia Grega</div>
+        <div class="dmeta" data-i18n="dom.m1">em demonstração</div>
+      </div>
+      <div class="dom">
+        <svg viewBox="0 0 120 80" aria-hidden="true">
+          <line class="ge" x1="22" y1="40" x2="52" y2="20"/><line class="ge" x1="22" y1="40" x2="52" y2="60"/>
+          <line class="ge" x1="52" y1="20" x2="86" y2="28"/><line class="ge" x1="52" y1="60" x2="94" y2="56"/>
+          <line class="ge" x1="86" y1="28" x2="94" y2="56"/>
+          <circle class="gn" cx="22" cy="40" r="4"/><circle class="gn" cx="52" cy="20" r="4"/>
+          <circle class="gn" cx="52" cy="60" r="4"/><circle class="gn" cx="86" cy="28" r="4"/><circle class="gn" cx="94" cy="56" r="4"/>
+        </svg>
+        <div class="dname" data-i18n="dom.d2">Cotidiano</div>
+      </div>
+      <div class="dom">
+        <svg viewBox="0 0 120 80" aria-hidden="true">
+          <line class="ge" x1="30" y1="22" x2="68" y2="28"/><line class="ge" x1="30" y1="22" x2="24" y2="56"/>
+          <line class="ge" x1="68" y1="28" x2="58" y2="58"/><line class="ge" x1="58" y1="58" x2="24" y2="56"/>
+          <line class="ge" x1="68" y1="28" x2="92" y2="44"/>
+          <circle class="gn" cx="30" cy="22" r="4"/><circle class="gn" cx="68" cy="28" r="4"/>
+          <circle class="gn" cx="24" cy="56" r="4"/><circle class="gn" cx="58" cy="58" r="4"/><circle class="gn" cx="92" cy="44" r="4"/>
+        </svg>
+        <div class="dname" data-i18n="dom.d3">Construção</div>
+      </div>
+      <div class="dom plug">
+        <div class="pl">+</div>
+        <div class="dname" data-i18n="dom.d4">novo domínio</div>
+      </div>
+    </div>
+    <p class="domains-note reveal" data-i18n="dom.note">
+      O mesmo motor percorre qualquer compartimento. Trocar de domínio
+      não reescreve a mente — só troca o mapa.
+    </p>
   </div>
 </section>
 
@@ -945,6 +1023,15 @@
     "st.i7": `Mechanical proof of cross-language equivalence — in development`,
     "st.i8": `Interactive public demo — upcoming`,
     "st.i9": `Personality Layer — specified, not yet implemented`,
+    "dom.k": `Compartmentalized knowledge`,
+    "dom.h": `Knowledge lives in compartments.`,
+    "dom.p": `The system's knowledge is not one monolithic block. Each domain — philosophy, the everyday, a technical field — is its own graph of connected concepts. <strong>Adding an area of knowledge means plugging in a new compartment</strong>; the reasoning that traverses it is always the same.`,
+    "dom.d1": `Greek Philosophy`,
+    "dom.m1": `in this demo`,
+    "dom.d2": `Everyday`,
+    "dom.d3": `Construction`,
+    "dom.d4": `new domain`,
+    "dom.note": `The same engine traverses any compartment. Switching domains doesn't rewrite the mind — it only swaps the map.`,
     "hon.k": `The difference that matters`,
     "hon.h": `When it doesn't know, it doesn't invent.`,
     "hon.p": `Most systems close the gap with plausible text. This one <strong>declares it</strong> — the line between a tool you trust and one you watch.`,
